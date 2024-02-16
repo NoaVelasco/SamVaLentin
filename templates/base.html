@@ -1,0 +1,56 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Feliz Sam Va Lentín{% endblock title %}</title>
+    {% load static %}  
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+      body {
+        background-image: url('{% static 'formulario/srfrodo.jpg' %}');
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      h1 {
+          margin: 3% auto;
+          text-align: right;
+          
+      }
+
+      form {
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 30px;
+        margin: 20% auto;
+        max-width: 300px;
+        text-align: center;
+        position: relative;
+        left: 150px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+
+      .derecha {
+        text-align: right;
+      }
+    </style>
+</head>
+<body class="container-fluid">
+
+<main id="contenido">
+{% block page_content %}{% endblock page_content %}
+</main>
+
+</body>
+</html>

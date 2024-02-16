@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+
+    
+    <div class="derecha">
+
+        <h1>SAM VA LENTÍN</h1>           
+        <button class="btn btn-primary btn-sm"> <a class="nav-link" href="{% url 'results' %}">Resultados</a></button>
+    </div>
+    
+
+    <form method="POST" enctype="multipart/form-data" class="formulario-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-primary">Guardar nombre</button>
+    </form>
+
+
+    
+
+
+{% endblock page_content %}

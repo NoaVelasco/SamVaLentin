@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<table align ="right">
+    <tr>
+        <td>
+            <h1>SAM VA LENTÍN</h1>
+        </td>
+        <td>
+            <aside>
+                <button class="btn btn-primary btn-sm"> <a class="nav-link" href="{% url 'results' %}">Resultados</a></button>
+            </aside>
+        </td>
+    </tr>
+        <form method="POST" enctype="multipart/form-data" class="formulario-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-primary">Guardar nombre</button>
+        </form>
+
+    </table>
+    
+
+
+{% endblock page_content %}

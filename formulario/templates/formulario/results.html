@@ -1,0 +1,61 @@
+<!-- formulario/results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Sombrero Seleccionador{% endblock title %}</title>
+    {% load static %}  
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+      body {
+        background-image: url('{% static 'formulario/results.jpg' %}');
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      h1, h2 {
+          margin: 3% auto;
+          text-align: left;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+
+      .primer {
+        margin-top: 40%;
+      }
+
+    </style>
+</head>
+<body class="container">
+
+<main id="contenido">
+
+    <div class="primer">
+        <h1>Entrada de la Base de Datos</h1>
+    </div>
+    <div>
+        <h2>{{ nombre }}</h2>  {# Muestra el campo 'texto' de la entrada #}
+
+    </div>
+    <div>
+        
+        <button class="btn btn-primary btn-sm"> <a class="nav-link" href="{% url 'results' %}">Siguiente nombre</a></button>
+        <button class="btn btn-primary btn-sm"> <a class="nav-link" href="{% url 'reset' %}">Borrar la lista</a></button>
+    </div>
+        
+
+
+</main>
+
+</body>
+</html>
